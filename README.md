@@ -227,7 +227,7 @@ The publishing system is designed around the following controls:
 | Cloudflare FLUX.2 image generation | Verified |
 | Instagram single-image publishing | Verified |
 | GitHub repository | Created |
-| Automated image uploads | In development |
+| Automated image uploads | Verified (single-image GitHub API upload) |
 | Carousel rendering | Planned |
 | Automated carousel publishing | Planned |
 | Production scheduling | Not activated |
@@ -238,7 +238,7 @@ The publishing system is designed around the following controls:
 - [x] Generate an image using FLUX.2 Klein 4B.
 - [x] Verify Instagram API single-image publishing.
 - [x] Create public media repository.
-- [ ] Implement automated GitHub image uploads.
+- [x] Implement automated GitHub image uploads (single-image test verified on 2026-11-19).
 - [ ] Implement consistent carousel composition.
 - [ ] Integrate local AI content generation and review.
 - [ ] Validate end-to-end carousel publishing.
