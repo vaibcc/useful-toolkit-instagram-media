@@ -59,7 +59,7 @@ flowchart TD
     style L fill:#111827,stroke:#38bdf8,color:#fff
 ```
 
-*Architecture target. Components are integrated progressively and production scheduling is enabled only after validation.*
+*End-to-end carousel publishing has been successfully validated. Unattended production scheduling and resilience controls remain separate operational milestones.*
 
 ## Technology Stack
 
@@ -175,13 +175,13 @@ Final images are uploaded to this repository with predictable paths and unique f
 
 **07 · Publish**
 
-Instagram retrieves the publicly hosted assets and publishes the prepared content.
+Instagram retrieves the publicly hosted assets and publishes the prepared carousel. The six-slide end-to-end publishing path has been successfully tested.
 
-**08 · Monitor**
+**08 · Notify**
 
-Execution status and publishing failures are reported through the automation system.
+A Telegram notification follows successful publication. Failure monitoring and duplicate-publication safeguards remain planned hardening work.
 
-## Planned Publishing Strategy
+## Publishing Strategy
 
 | Time (Europe/Paris) | Content Category | Format |
 |---|---|---|
@@ -189,7 +189,7 @@ Execution status and publishing failures are reported through the automation sys
 | 13:00 | Productivity and practical tips | Single image |
 | 19:00 | Technology and cybersecurity | 6-slide carousel |
 
-Publishing times and formats are configuration targets and may change based on operational results.
+These are illustrative scheduling targets, not a claim that the listed schedules are currently enabled.
 
 ## Cost Model
 
@@ -207,18 +207,18 @@ Free-tier limits, acceptable-use requirements, and provider policies still apply
 
 ## Security & Operational Controls
 
-The publishing system is designed around the following controls:
+The system follows these design principles; controls still requiring operational validation are listed as planned:
 
 - Credentials stored in n8n's credential manager.
 - Least-privilege access for external services.
 - No API keys or access tokens committed to GitHub.
 - Separation of public media assets and private workflow configuration.
 - Validation of generated content before publication.
-- Duplicate-publication prevention.
-- Error handling and operational notifications.
-- Monitoring of free-tier API usage.
+- Duplicate-publication prevention (planned hardening).
+- Telegram success notification (integrated); failure alerting (planned).
+- Monitoring of free-tier API usage (planned hardening).
 
-**This repository contains public media assets only.** It must never contain credentials, private prompts containing sensitive information, internal infrastructure configuration, or unpublished confidential material.
+**This public repository contains media assets and a high-level project overview only.** Private workflow exports, credentials, infrastructure configuration, internal prompts, and unpublished confidential material are not published here.
 
 ## Project Status
 
@@ -227,10 +227,12 @@ The publishing system is designed around the following controls:
 | Cloudflare FLUX.2 image generation | Verified |
 | Instagram single-image publishing | Verified |
 | GitHub repository | Created |
-| Automated image uploads | Verified (single-image GitHub API upload) |
-| Carousel rendering | Planned |
-| Automated carousel publishing | Planned |
-| Production scheduling | Not activated |
+| Automated image uploads | Verified (six-image carousel) |
+| Branded carousel rendering | Verified |
+| Local AI generation and review | Verified |
+| Automated carousel publishing | **Verified end to end (2026-11-20)** |
+| Telegram success notification | Integrated |
+| Production scheduling | Not confirmed as activated |
 
 ## Roadmap
 
@@ -238,12 +240,17 @@ The publishing system is designed around the following controls:
 - [x] Generate an image using FLUX.2 Klein 4B.
 - [x] Verify Instagram API single-image publishing.
 - [x] Create public media repository.
-- [x] Implement automated GitHub image uploads (single-image test verified on 2026-11-19).
-- [ ] Implement consistent carousel composition.
-- [ ] Integrate local AI content generation and review.
-- [ ] Validate end-to-end carousel publishing.
+- [x] Implement automated GitHub image uploads for six-slide carousels.
+- [x] Implement consistent branded carousel composition.
+- [x] Integrate local AI content generation and review.
+- [x] Validate end-to-end carousel publishing (2026-11-20).
+- [x] Integrate Telegram publication notifications.
 - [ ] Implement failure handling and usage monitoring.
 - [ ] Enable production scheduling.
+
+## Project Milestone
+
+**20 November 2026:** Successfully published a complete six-slide Instagram carousel through the integrated workflow, from AI-assisted content preparation and visual generation to public asset hosting, Instagram publication, and Telegram notification. This README intentionally describes the system at a high level; implementation details remain private.
 
 ## About Useful Toolkit
 
